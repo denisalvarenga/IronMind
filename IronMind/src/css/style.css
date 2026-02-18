@@ -1,0 +1,463 @@
+/* ================= RESET ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================= BODY ================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ================= TÍTULOS ================= */
+h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+h2, h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+/* ================= FORMULÁRIO ================= */
+form {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: none;
+    background: #2a2a2a;
+    color: white;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #e63946;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background: #e63946;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c1121f;
+    transform: translateY(-2px);
+}
+
+/* ================= RESULTADO ================= */
+.resultado-box {
+    margin-top: 40px;
+}
+
+/* ================= TREINO GRID ================= */
+.tabela-treino {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.dia-bloco {
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.dia-bloco:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+}
+
+.dia-titulo {
+    background: #e63946;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #151515;
+    font-weight: bold;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #222;
+}
+
+.linha:nth-child(even) {
+    background: #181818;
+}
+
+.exercicio {
+    width: 70%;
+}
+
+.series {
+    width: 30%;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* ================= BOTOES ================= */
+.acoes-finais {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.btn-primario, .btn-secundario {
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primario {
+    background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+    color: white;
+}
+
+.btn-primario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,0,0,0.4);
+}
+
+.btn-secundario {
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+}
+
+.btn-secundario:hover {
+    background: #333;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= DASHBOARD ================= */
+.symbiote {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at 40% 40%, #8a0303, #2b0000 70%);
+    border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    animation: breathe 6s infinite ease-in-out;
+}
+
+@keyframes breathe {
+    0% { border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%; transform: scale(1); }
+    50% { border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%; transform: scale(1.1); }
+    100% { border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%; transform: scale(1); }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 320px;
+    position: relative;
+    z-index: 2;
+}
+
+button.logout {
+    background: #111;
+}
+
+button.logout:hover {
+    background: #550000;
+}
+
+.welcome {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 1.2rem;
+    color: #b30000;
+    overflow: hidden;
+    border-right: 2px solid #b30000;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2.5s steps(40, end) forwards, blink 0.7s infinite;
+    z-index: 2;
+}
+
+@keyframes typing { from { width: 0 } to { width: 320px } }
+@keyframes blink { 50% { border-color: transparent } }
+
+/* ================= AUTH ================= */
+.auth-body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #1a0000 0%, #000000 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-wrapper {
+    text-align: center;
+    animation: fadeSlide 0.8s ease-out;
+}
+
+.auth-logo {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.auth-logo span {
+    color: #e63946;
+}
+
+.auth-subtitle {
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.auth-container {
+    background: #111;
+    padding: 45px;
+    border-radius: 16px;
+    width: 380px;
+    box-shadow: 0 0 50px rgba(230, 57, 70, 0.4);
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background: #1f1f1f;
+    color: white;
+    transition: 0.3s;
+}
+
+.auth-container input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #e63946;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    background: #e63946;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-container button:hover {
+    background: #c1121f;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.6);
+}
+
+.auth-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: #e63946;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.auth-msg {
+    color: #e63946;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ================= ANIMAÇÃO ================= */
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 600px) {
+    .linha,
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .series {
+        text-align: left;
+        margin-top: 5px;
+    }
+}
+/* ================= DASHBOARD ================= */
+.dashboard-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ocupa a tela toda */
+    background: #000;
+    position: relative;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    color: white;
+}
+
+.symbiote {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at 40% 40%, #8a0303, #2b0000 70%);
+    border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    animation: breathe 6s infinite ease-in-out;
+}
+
+@keyframes breathe {
+    0% {
+        border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+        transform: scale(1);
+    }
+    50% {
+        border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%;
+        transform: scale(1.1);
+    }
+    100% {
+        border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+        transform: scale(1);
+    }
+}
+
+.dashboard-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.dashboard-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* antes era 20px, diminuí para aproximar os botões */
+    width: 320px;
+}
+
+
+.dashboard-buttons button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(90deg, #3a0000, #8a0303);
+    box-shadow: 0 0 15px rgba(138,3,3,0.5);
+    transition: 0.3s;
+}
+
+.dashboard-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(138,3,3,0.9);
+}
+
+.dashboard-buttons .logout {
+    background: #111;
+}
+
+.dashboard-buttons .logout:hover {
+    background: #550000;
+}
+
+/* Bem-vindo */
+.welcome {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 1.2rem;
+    color: #b30000;
+    overflow: hidden;
+    border-right: 2px solid #b30000;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2.5s steps(40, end) forwards,
+               blink 0.7s infinite;
+    z-index: 2;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 320px }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
