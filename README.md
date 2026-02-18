@@ -69,7 +69,7 @@
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seuusuario/IronMind.git
+git clone https://github.com/denisalvarenga/IronMind.git
 Configure o servidor local (XAMPP, MAMP ou similar):
 
 Copie a pasta IronMind para o diretório htdocs (ou equivalente).
